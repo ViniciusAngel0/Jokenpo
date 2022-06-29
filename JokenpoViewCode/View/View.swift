@@ -14,7 +14,7 @@ class View: UIView {
     //MARK: - ViewElements
     
     lazy var logoLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "JOKENPÔ"
         label.font = .boldSystemFont(ofSize: 30)
         label.textAlignment = .center
@@ -24,7 +24,7 @@ class View: UIView {
     }()
     
     
-     lazy var computerLabel: UILabel = {
+    lazy var computerLabel: UILabel = {
         let label = UILabel()
         label.text = "Robô"
         label.font = .systemFont(ofSize: 20)
@@ -33,15 +33,15 @@ class View: UIView {
         return label
     }()
     
-     lazy var computerImage: UIImageView = {
-       let image = UIImageView()
+    lazy var computerImage: UIImageView = {
+        let image = UIImageView()
         image.image = UIImage(named: "padrao")
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
     lazy var userLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Escolha uma opção"
         label.font = .systemFont(ofSize: 20)
         label.textAlignment = .center
@@ -50,7 +50,7 @@ class View: UIView {
     }()
     
     lazy var pedraButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setImage(UIImage(named: "pedra"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(pedraButtonTapped), for: .touchUpInside)
@@ -58,7 +58,7 @@ class View: UIView {
     }()
     
     lazy var papelButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setImage(UIImage(named: "papel"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(papelButtonTapped), for: .touchUpInside)
@@ -66,7 +66,7 @@ class View: UIView {
     }()
     
     lazy var tesouraButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setImage(UIImage(named: "tesoura"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(tesouraButtonTapped), for: .touchUpInside)
@@ -74,7 +74,7 @@ class View: UIView {
     }()
     
     lazy var XLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "X"
         label.font = .boldSystemFont(ofSize: 40)
         label.textAlignment = .center
@@ -83,7 +83,7 @@ class View: UIView {
     }()
     
     lazy var result1Label: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "0"
         label.font = .boldSystemFont(ofSize: 40)
         label.textAlignment = .center
@@ -92,7 +92,7 @@ class View: UIView {
     }()
     
     lazy var result2Label: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "0"
         label.font = .boldSystemFont(ofSize: 40)
         label.textAlignment = .center
@@ -101,7 +101,7 @@ class View: UIView {
     }()
     
     lazy var resultLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = ""
         label.font = .boldSystemFont(ofSize: 40)
         label.textAlignment = .center
@@ -109,9 +109,6 @@ class View: UIView {
         return label
     }()
     
-
-
-
     
     //MARK: - SETUP
     //Init
@@ -120,7 +117,7 @@ class View: UIView {
         setupView()
         setupLayoutConstraints()
         setupAdditionalConfiguration()
-    
+        
     }
     
     required init?(coder: NSCoder) {
@@ -141,14 +138,14 @@ class View: UIView {
         self.addSubview(result2Label)
         self.addSubview(resultLabel)
         
-
-
+        
+        
     }
     
     private func setupAdditionalConfiguration () {
         self.backgroundColor = .systemBackground
     }
-        
+    
     //Constraits
     private func setupLayoutConstraints() {
         NSLayoutConstraint.activate([
@@ -174,10 +171,10 @@ class View: UIView {
             
             papelButton.topAnchor.constraint(equalTo: userLabel.bottomAnchor, constant: 20),
             papelButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-         
+            
             tesouraButton.topAnchor.constraint(equalTo: userLabel.bottomAnchor, constant: 20),
             tesouraButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
- 
+            
             XLabel.topAnchor.constraint(equalTo: papelButton.bottomAnchor, constant: 50),
             XLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
@@ -189,7 +186,7 @@ class View: UIView {
             
             resultLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             resultLabel.topAnchor.constraint(equalTo: XLabel.bottomAnchor, constant: 20)
-
+            
         ])
         
     }
@@ -199,8 +196,8 @@ class View: UIView {
     
     @objc func pedraButtonTapped() {
         
-//        papelButton.isHidden = true
-//        tesouraButton.isHidden = true
+        //        papelButton.isHidden = true
+        //        tesouraButton.isHidden = true
         
         var random: Int
         random = Int.random(in: 1...3)
